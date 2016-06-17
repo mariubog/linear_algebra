@@ -13,7 +13,7 @@ public class Vector {
 	private double[] coordinates;
 
 	public Vector(double[] coordinates) throws ImpossileVectorException {
-		if (coordinates == null || coordinates.length <= 1) {
+		if (coordinates == null || coordinates.length < 1) {
 			throw new ImpossileVectorException();
 		}
 		this.coordinates = coordinates;

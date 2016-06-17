@@ -55,6 +55,33 @@ public class Vector_Calculations {
 		return resultVector;
 	}
 
+	public double calculateVectorMagnitude(Vector v) {
+		double m = 0.00;
+		if (v != null) {
+			for (double d : v.getCoordinates()) {
+				m += d * d;
+			}
+		} else {
+			throw new NullPointerException();
+		}
+		return Math.sqrt(m);
+	}
+
+	public Vector calculateUnitVector(Vector v)throws IllegalArgumentException {
+		Vector u = null;
+
+		if (v != null) {
+			double magnitude = calculateVectorMagnitude(v);
+			if(magnitude<=0){
+				throw new IllegalArgumentException("Magnitude of vector is 0 vector can not be normalized");
+			}
+			u = multiplyVectorsByScalar(v, 1 / magnitude);
+		} else {
+			throw new NullPointerException();
+		}
+		return u;
+	}
+
 	public void printVector(Vector v) {
 		System.out.println("Vector : " + v.toString());
 	}
@@ -81,6 +108,29 @@ public class Vector_Calculations {
 			vc.subtractPrintVectors(v3, v4);
 			System.out.println("");
 			vc.multiplyByScalarPrintVectors(v5, scalar);
+			System.out.println("");
+
+			Vector v6 = new Vector(new double[] { -1, 1, 1 });
+			vc.printVectorMagnitude(v6);
+			System.out.println("");
+			vc.printUnitVector(v6);
+			System.out.println("");
+			vc.multiplyByScalarPrintVectors(vc.calculateUnitVector(v6), vc.calculateVectorMagnitude(v6));
+			System.out.println("");
+
+			Vector v7 = new Vector(new double[] { -0.221, 7.437 });
+			Vector v8 = new Vector(new double[] { 8.813, -1.331, -6.247 });
+			Vector v9 = new Vector(new double[] { 5.581, -2.136 });
+			Vector v10 = new Vector(new double[] { 1.996, 3.108, -4.554 });
+
+			vc.printVectorMagnitude(v7);
+			System.out.println("");
+			vc.printVectorMagnitude(v8);
+			System.out.println("");
+			vc.printUnitVector(v9);
+			System.out.println("");
+			vc.printUnitVector(v10);
+			System.out.println("");
 
 		} catch (DiffernetDimentionsVectorException e) {
 			e.printStackTrace();
@@ -100,9 +150,17 @@ public class Vector_Calculations {
 				"Subtract vectors:" + v1.toString() + " - " + v2.toString() + "  =  " + subtractVectors(v1, v2));
 	}
 
-	public void multiplyByScalarPrintVectors(Vector v1, double scalar) throws DiffernetDimentionsVectorException {
+	public void multiplyByScalarPrintVectors(Vector v1, double scalar) {
 		System.out.println("Multiply By Scalart vectors:" + v1.toString() + " * " + scalar + "  =  "
 				+ multiplyVectorsByScalar(v1, scalar));
+	}
+
+	public void printVectorMagnitude(Vector v) {
+		System.out.println("Vector  :" + v.toString() + " -->   Vector magnitude: " + calculateVectorMagnitude(v));
+	}
+
+	public void printUnitVector(Vector v) {
+		System.out.println("Vector  :" + v.toString() + " -->  Unit vector: " + calculateUnitVector(v));
 	}
 
 }
