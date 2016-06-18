@@ -48,8 +48,7 @@ public class Vector {
 		if (o instanceof Vector) {
 			Vector v = (Vector) o;
 			if (v.getCoordinates().length != this.coordinates.length) {
-				throw new DiffernetDimentionsVectorException(
-						new int[] { v.getCoordinates().length, this.coordinates.length });
+				throw new DiffernetDimentionsVectorException();
 			}
 			return Arrays.equals(v.getCoordinates(), coordinates);
 		}
@@ -86,9 +85,5 @@ public class Vector {
 			super(message);
 		}
 
-		public DiffernetDimentionsVectorException(int[] dimentions) {
-			super("You cant make operations on vectors of different dimensions");
-
-		}
 	}
 }
