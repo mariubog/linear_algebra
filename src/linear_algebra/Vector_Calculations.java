@@ -4,7 +4,7 @@ import linear_algebra.Vector.DiffernetDimentionsVectorException;
 
 public class Vector_Calculations {
 
-	public static final double ERROR_MARGIN = 1e-4;
+	public static final double TOLERANCE = 1e-4;
 
 	public static Vector addVectors(Vector v1, Vector v2)
 			throws DiffernetDimentionsVectorException, NullPointerException {
@@ -70,7 +70,7 @@ public class Vector_Calculations {
 		return Math.sqrt(m);
 	}
 
-	public static Vector calculateUnitVector(Vector v, int precision) throws IllegalArgumentException {
+	public static Vector calculateUnitVector(Vector v) throws IllegalArgumentException {
 		Vector u = null;
 
 		if (v != null) {
@@ -176,25 +176,65 @@ public class Vector_Calculations {
 			if (v1.getCoordinates().length != v2.getCoordinates().length) {
 				throw new DiffernetDimentionsVectorException();
 			}
-			Vector uv1 = calculateUnitVector(v1, 3);
-			Vector uv2 = calculateUnitVector(v2, 3);
+			Vector uv1 = calculateUnitVector(v1);
+			Vector uv2 = calculateUnitVector(v2);
 			Vector difference_vector_1 = subtractVectors(uv1, uv2);
 			Vector difference_vector_2 = subtractVectors(uv1, multiplyVectorsByScalar(uv2, -1));
 
 			for (int i = 0; i < difference_vector_1.getCoordinates().length; i++) {
-				if (Math.abs(difference_vector_1.getCoordinates()[i]) > ERROR_MARGIN
-						&& Math.abs(difference_vector_2.getCoordinates()[i]) > ERROR_MARGIN) {
+				if (Math.abs(difference_vector_1.getCoordinates()[i]) > TOLERANCE
+						&& Math.abs(difference_vector_2.getCoordinates()[i]) > TOLERANCE) {
 					return false;
 				}
 			}
-
 		} else {
 			throw new NullPointerException();
 		}
 		return true;
 	}
 
-	public boolean areVectorsOrthogonal(Vector v1, Vector v2) {
+	public static boolean areVectorsOrthogonal(Vector v1, Vector v2) {
+		if (v1 != null && v2 != null) {
+			if (v1.getCoordinates().length != v2.getCoordinates().length) {
+				throw new DiffernetDimentionsVectorException();
+			}
+			double dot_product = calculateInnerProduct(v1, v2);
+			if (Math.abs(dot_product) < TOLERANCE) {
+				return true;
+			}
+		} else {
+			throw new NullPointerException();
+		}
 		return false;
+	}
+
+	public static Vector findVectorProjectionOnBaseU(Vector v1, Vector b) {
+		Vector v_parallel = null;
+		if (v1 != null && b != null) {
+			if (v1.getCoordinates().length != b.getCoordinates().length) {
+				throw new DiffernetDimentionsVectorException();
+			}
+			Vector b_unit_vector = calculateUnitVector(b);
+			v_parallel = multiplyVectorsByScalar(b_unit_vector, calculateInnerProduct(v1, b_unit_vector));
+
+		} else {
+			throw new NullPointerException();
+		}
+		return v_parallel;
+	}
+
+	public static Vector findVectorComponentOrthogonalToBbaseUsingAddition(Vector v1, Vector b) {
+		Vector orthogonalComponent = null;
+		if (v1 != null && b != null) {
+			if (v1.getCoordinates().length != b.getCoordinates().length) {
+				throw new DiffernetDimentionsVectorException();
+			}
+			Vector parallel_component = findVectorProjectionOnBaseU(v1, b);
+			orthogonalComponent = subtractVectors(v1, parallel_component);
+
+		} else {
+			throw new NullPointerException();
+		}
+		return orthogonalComponent;
 	}
 }

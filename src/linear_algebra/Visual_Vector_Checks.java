@@ -31,7 +31,7 @@ public class Visual_Vector_Checks {
 	}
 
 	public void printUnitVector(Vector v) {
-		System.out.println("Vector  :" + v.toString() + " -->  Unit vector: " + calculateUnitVector(v, 3));
+		System.out.println("Vector  :" + v.toString() + " -->  Unit vector: " + calculateUnitVector(v));
 	}
 
 	public void printVectorInnerProduct(Vector v1, Vector v2) {
@@ -57,6 +57,21 @@ public class Visual_Vector_Checks {
 	public void printVectorsParallelnesCheck(Vector v1, Vector v2) {
 		System.out.println(
 				"Vectors parallel : " + v1.toString() + " + " + v2.toString() + "  ?  " + areVectorsParallel(v1, v2));
+	}
+
+	public void printVectorsOrthogonalnessCheck(Vector v1, Vector v2) {
+		System.out.println("Vectors orthogonal : " + v1.toString() + " + " + v2.toString() + "  ?  "
+				+ areVectorsOrthogonal(v1, v2));
+	}
+
+	public void printVectorParallelProjection(Vector v1, Vector base) {
+		System.out.println("Vector: " + v1.toString() + "  Base: " + base.toString() + "  Parallel Projection:  "
+				+ findVectorProjectionOnBaseU(v1, base));
+	}
+
+	public void printVectorOrthogonalComponent(Vector v1, Vector base) {
+		System.out.println("Vector: " + v1.toString() + "  Base: " + base.toString()
+				+ "  Orthogonal componentProjection:  " + findVectorComponentOrthogonalToBbaseUsingAddition(v1, base));
 	}
 
 	public static void main(String[] args) {
@@ -125,28 +140,47 @@ public class Visual_Vector_Checks {
 			// vc.printVectorsAngleInDegrees(v17, v18);
 			// System.out.println("");
 
-			Vector v1 = new Vector(new double[] { -7.579, -7.88 });
-			Vector v2 = new Vector(new double[] { 22.737, 23.64 });
-			Vector v3 = new Vector(new double[] { -2.029, 9.97, 4.172 });
-			Vector v4 = new Vector(new double[] { -9.231, -6639, -7.245 });
-			Vector v5 = new Vector(new double[] { -2.328, -7.284, -1.214 });
-			Vector v6 = new Vector(new double[] { -1.821, 1.072, -2.94 });
-			Vector v7 = new Vector(new double[] { 2.118, 4.827 });
-			Vector v8 = new Vector(new double[] { 0, 0 });
+			// Vector v1 = new Vector(new double[] { -7.579, -7.88 });
+			// Vector v2 = new Vector(new double[] { 22.737, 23.64 });
+			// Vector v3 = new Vector(new double[] { -2.029, 9.97, 4.172 });
+			// Vector v4 = new Vector(new double[] { -9.231, -6.639, -7.245 });
+			// Vector v5 = new Vector(new double[] { -2.328, -7.284, -1.214 });
+			// Vector v6 = new Vector(new double[] { -1.821, 1.072, -2.94 });
+			// Vector v7 = new Vector(new double[] { 2.118, 4.827 });
+			// Vector v8 = new Vector(new double[] { 0, 0 });
+			//
+			// vc.printVectorsAngleInDegrees(v1, v2);
+			// vc.printVectorsParallelnesCheck(v1, v2);
+			// vc.printVectorsOrthogonalnessCheck(v1, v2);
+			// System.out.println("");
+			// vc.printVectorsAngleInDegrees(v3, v4);
+			// vc.printVectorsParallelnesCheck(v3, v4);
+			// vc.printVectorsOrthogonalnessCheck(v3, v4);
+			// System.out.println("");
+			// vc.printVectorsAngleInDegrees(v5, v6);
+			// vc.printVectorsParallelnesCheck(v5, v6);
+			// vc.printVectorsOrthogonalnessCheck(v5, v6);
+			// System.out.println("");
+			// vc.printVectorsAngleInDegrees(v7, v8);
+			// vc.printVectorsParallelnesCheck(v7, v8);
+			// vc.printVectorsOrthogonalnessCheck(v7, v8);
+			// System.out.println("");
 
-			vc.printVectorsAngleInDegrees(v1, v2);
-			vc.printVectorsParallelnesCheck(v1, v2);
-			System.out.println("");
-			vc.printVectorsAngleInDegrees(v3, v4);
-			vc.printVectorsParallelnesCheck(v3, v4);
-			System.out.println("");
-			vc.printVectorsAngleInDegrees(v5, v6);
-			vc.printVectorsParallelnesCheck(v5, v6);
-			System.out.println("");
-			vc.printVectorsAngleInDegrees(v7, v8);
-			vc.printVectorsParallelnesCheck(v7, v8);
-			System.out.println("");
+			Vector v1 = new Vector(new double[] { 3.039, 1.879 });
+			Vector v2 = new Vector(new double[] { 0.825, 2.036 });
 
+			Vector v3 = new Vector(new double[] { -9.88, -3.264, -8.159 });
+			Vector v4 = new Vector(new double[] { -2.155, -9.353, -9.473 });
+
+			Vector v5 = new Vector(new double[] { 3.009, -6.172, 3.692, -2.51 });
+			Vector v6 = new Vector(new double[] { 6.404, -9.144, 2.759, 8.718 });
+
+			vc.printVectorParallelProjection(v1, v2);
+			System.out.println("");
+			vc.printVectorOrthogonalComponent(v3, v4);
+			System.out.println("");
+			vc.printVectorParallelProjection(v5, v6);
+			vc.printVectorOrthogonalComponent(v5, v6);
 		} catch (DiffernetDimentionsVectorException e) {
 			e.printStackTrace();
 		}
