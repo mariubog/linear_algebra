@@ -1,6 +1,6 @@
 package linear_algebra;
 
-import linear_algebra.Vector.DiffernetDimentionsVectorException;
+import linear_algebra.exceptions.*;
 
 public class Vector_Calculations {
 
@@ -100,19 +100,31 @@ public class Vector_Calculations {
 		return k;
 	}
 
-	public static double calculateCrossProduct(Vector v1, Vector v2) throws DiffernetDimentionsVectorException {
-		double k = 0.00;
+	public static Vector calculateCrossProduct(Vector v1, Vector v2) throws DiffernetDimentionsVectorException {
+		Vector cross = null;
 		if (v1 != null && v2 != null) {
 			if (v1.getCoordinates().length != v2.getCoordinates().length) {
 				throw new DiffernetDimentionsVectorException();
 			}
-			for (int i = 0; i < v1.getCoordinates().length; i++) {
-				k += v1.getCoordinates()[i] * v2.getCoordinates()[i];
+			if (v1.getCoordinates().length != 3) {
+				throw new InaplicableDimentionsVectorException();
 			}
+
+			cross = new Vector(v1.getCoordinates().length);
+
+			cross.getCoordinates()[0] = (v1.getCoordinates()[1] * v2.getCoordinates()[2])
+					- ((v2.getCoordinates()[1] * v1.getCoordinates()[2]));
+
+			cross.getCoordinates()[1] = -((v1.getCoordinates()[0] * v2.getCoordinates()[2])
+					- ((v2.getCoordinates()[0] * v1.getCoordinates()[2])));
+
+			cross.getCoordinates()[2] = (v1.getCoordinates()[0] * v2.getCoordinates()[1])
+					- ((v2.getCoordinates()[0] * v1.getCoordinates()[1]));
+
 		} else {
 			throw new NullPointerException();
 		}
-		return k;
+		return cross;
 	}
 
 	public static double calculateVectorsAngle(Vector v1, Vector v2) throws DiffernetDimentionsVectorException {
@@ -237,4 +249,5 @@ public class Vector_Calculations {
 		}
 		return orthogonalComponent;
 	}
+
 }

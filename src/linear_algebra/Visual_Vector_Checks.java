@@ -1,6 +1,7 @@
 package linear_algebra;
 
-import linear_algebra.Vector.DiffernetDimentionsVectorException;
+import linear_algebra.exceptions.*;
+
 import static linear_algebra.Vector_Calculations.*;
 
 public class Visual_Vector_Checks {
@@ -37,6 +38,21 @@ public class Visual_Vector_Checks {
 	public void printVectorInnerProduct(Vector v1, Vector v2) {
 		System.out.println("Inner Product vectors:" + v1.toString() + " dot " + v2.toString() + "  =  "
 				+ calculateInnerProduct(v1, v2));
+	}
+
+	public void printVectorCrossProduct(Vector v1, Vector v2) {
+		System.out.println("Cross Product vectors:" + v1.toString() + " X " + v2.toString() + "  =  "
+				+ calculateCrossProduct(v1, v2));
+	}
+
+	public void printCrossParallelogramArea(Vector v1, Vector v2) {
+		System.out.println("Parallelogram for vectors:" + v1.toString() + " and " + v2.toString() + "  =  "
+				+ calculateVectorMagnitude(calculateCrossProduct(v1, v2)));
+	}
+
+	public void printCrossTriangle(Vector v1, Vector v2) {
+		System.out.println("Triangle for vectors:" + v1.toString() + " and " + v2.toString() + "  =  "
+				+ calculateVectorMagnitude(calculateCrossProduct(v1, v2)) / 2);
 	}
 
 	public void printVectorsAngle(Vector v1, Vector v2) {
@@ -166,21 +182,45 @@ public class Visual_Vector_Checks {
 			// vc.printVectorsOrthogonalnessCheck(v7, v8);
 			// System.out.println("");
 
-			Vector v1 = new Vector(new double[] { 3.039, 1.879 });
-			Vector v2 = new Vector(new double[] { 0.825, 2.036 });
+			// Vector v1 = new Vector(new double[] { 3.039, 1.879 });
+			// Vector v2 = new Vector(new double[] { 0.825, 2.036 });
+			//
+			// Vector v3 = new Vector(new double[] { -9.88, -3.264, -8.159 });
+			// Vector v4 = new Vector(new double[] { -2.155, -9.353, -9.473 });
+			//
+			// Vector v5 = new Vector(new double[] { 3.009, -6.172, 3.692, -2.51
+			// });
+			// Vector v6 = new Vector(new double[] { 6.404, -9.144, 2.759, 8.718
+			// });
+			//
+			// vc.printVectorParallelProjection(v1, v2);
+			// System.out.println("");
+			// vc.printVectorOrthogonalComponent(v3, v4);
+			// System.out.println("");
+			// vc.printVectorParallelProjection(v5, v6);
+			// vc.printVectorOrthogonalComponent(v5, v6);
 
-			Vector v3 = new Vector(new double[] { -9.88, -3.264, -8.159 });
-			Vector v4 = new Vector(new double[] { -2.155, -9.353, -9.473 });
+			Vector v1 = new Vector(new double[] { 8.462, 7.893, -8.187 });
+			Vector v2 = new Vector(new double[] { 6.984, -5.975, 4.778 });
+			Vector v3 = new Vector(new double[] { -8.987, -9.838, 5.031 });
+			Vector v4 = new Vector(new double[] { -4.268, -1.861, -8.866 });
+			Vector v5 = new Vector(new double[] { 1.5, 9.547, 3.691 });
+			Vector v6 = new Vector(new double[] { -6.007, 0.124, 5.772 });
 
-			Vector v5 = new Vector(new double[] { 3.009, -6.172, 3.692, -2.51 });
-			Vector v6 = new Vector(new double[] { 6.404, -9.144, 2.759, 8.718 });
+			vc.printVectorCrossProduct(v1, v2);
+			vc.printCrossParallelogramArea(v3, v4);
 
-			vc.printVectorParallelProjection(v1, v2);
-			System.out.println("");
-			vc.printVectorOrthogonalComponent(v3, v4);
-			System.out.println("");
-			vc.printVectorParallelProjection(v5, v6);
-			vc.printVectorOrthogonalComponent(v5, v6);
+			vc.printCrossTriangle(v5, v6);
+
+			// vc.printVectorMagnitude(v1);
+			// vc.printVectorMagnitude(v2);
+			// vc.printVectorInnerProduct(v1, v2);
+			// vc.printVectorsAngleInDegrees(v1, v2);
+			// vc.printVectorsAngleInDegrees(v2, v1);
+
+			// vc.printVectorMagnitude(v3);
+			vc.printVectorCrossProduct(v1, v2);
+
 		} catch (DiffernetDimentionsVectorException e) {
 			e.printStackTrace();
 		}

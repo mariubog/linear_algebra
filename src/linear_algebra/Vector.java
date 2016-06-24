@@ -5,6 +5,8 @@ package linear_algebra;
 
 import java.util.Arrays;
 
+import linear_algebra.exceptions.*;
+
 /**
  * @author supermario
  *
@@ -60,30 +62,4 @@ public class Vector {
 		return Arrays.toString(coordinates);
 	}
 
-	public static class ImpossileVectorException extends RuntimeException {
-
-		private static final long serialVersionUID = 1L;
-
-		public ImpossileVectorException() {
-			super("Wrong coordinates exception");
-		}
-
-		public ImpossileVectorException(String message) {
-			super(message);
-		}
-	}
-
-	public static class DiffernetDimentionsVectorException extends RuntimeException {
-
-		private static final long serialVersionUID = 1L;
-
-		public DiffernetDimentionsVectorException() {
-			super("Vectors are of different dimensions");
-		}
-
-		public DiffernetDimentionsVectorException(String message) {
-			super(message);
-		}
-
-	}
 }
