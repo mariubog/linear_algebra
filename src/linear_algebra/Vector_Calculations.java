@@ -155,6 +155,7 @@ public class Vector_Calculations {
 			if (calculateVectorMagnitude(v1) == 0 || calculateVectorMagnitude(v2) == 0) {
 				return true;
 			}
+
 			if (checkParallelWithDotProductZeroAngle(v1, v2) == true && checkParallelWithUnitvector(v1, v2) == true) {
 				return true;
 			}
@@ -173,7 +174,7 @@ public class Vector_Calculations {
 			double dot_product = calculateInnerProduct(v1, v2);
 			double v1_mag = calculateVectorMagnitude(v1);
 			double v2_mag = calculateVectorMagnitude(v2);
-			if (Math.abs(dot_product) == (v1_mag * v2_mag)) {
+			if (Math.abs(dot_product) - (v1_mag * v2_mag) < TOLERANCE) {
 				return true;
 			}
 		} else {
