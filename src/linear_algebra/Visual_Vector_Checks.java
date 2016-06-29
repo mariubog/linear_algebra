@@ -220,6 +220,7 @@ public class Visual_Vector_Checks {
 
 			// vc.printVectorMagnitude(v3);
 			vc.printVectorCrossProduct(v1, v2);
+			System.out.println("X \u2082");
 
 		} catch (DiffernetDimentionsVectorException e) {
 			e.printStackTrace();
