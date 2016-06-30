@@ -17,17 +17,49 @@ public class Line_Calculations {
 			Vector point_l1 = line_1.calculatePoint(1.00, null);
 			Vector point_l2 = line_2.calculatePoint(2.00, null);
 
-			Line l = calculateLineInteresectingTwoPoints2D(point_l1, point_l2);
+			Line l = findLineInteresectingTwoPoints2D(point_l1, point_l2);
+			Vector vector_connecting_two_lines = findVectorGivenTwoPoints(point_l1, point_l2);
 
-			if (areVectorsOrthogonal(getDirectionVector(l), line_1.getNormal_vector())
-					&& areVectorsOrthogonal(getDirectionVector(l), line_2.getNormal_vector())) {
+			if (areVectorsOrthogonal(vector_connecting_two_lines, line_1.getNormal_vector())
+					&& areVectorsOrthogonal(vector_connecting_two_lines, line_2.getNormal_vector())) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-	public static Line calculateLineInteresectingTwoPoints2D(Vector point1, Vector point2) {
+	public static Vector findLinesIntersection(Line line_1, Line line_2) {
+		Vector intersection = null;
+
+		if (Vector_Calculations.areVectorsParallel(line_1.getNormal_vector(), line_2.getNormal_vector())) {
+			return null;
+		}
+		double x = (line_2.getNormal_vector().getCoordinates()[1] * line_1.getConstant()
+				- line_1.getNormal_vector().getCoordinates()[1] * line_2.getConstant())
+				/ (line_1.getNormal_vector().getCoordinates()[0] * line_2.getNormal_vector().getCoordinates()[1]
+						- line_1.getNormal_vector().getCoordinates()[1]
+								* line_2.getNormal_vector().getCoordinates()[0]);
+		double y =
+
+				(-line_2.getNormal_vector().getCoordinates()[0] * line_1.getConstant()
+						+ line_1.getNormal_vector().getCoordinates()[0] * line_2.getConstant())
+						/ (line_1.getNormal_vector().getCoordinates()[0] * line_2.getNormal_vector().getCoordinates()[1]
+								- line_1.getNormal_vector().getCoordinates()[1]
+										* line_2.getNormal_vector().getCoordinates()[0]);
+
+		intersection = new Vector(new double[] { x, y });
+
+		return intersection;
+	}
+
+	public static Vector findVectorGivenTwoPoints(Vector point1, Vector point2) {
+		Vector v = new Vector(new double[] { 0, 0 });
+		v.getCoordinates()[0] = point2.getCoordinates()[0] - point1.getCoordinates()[0];
+		v.getCoordinates()[1] = point2.getCoordinates()[1] - point1.getCoordinates()[1];
+		return v;
+	}
+
+	public static Line findLineInteresectingTwoPoints2D(Vector point1, Vector point2) {
 
 		double coeficient_x1;
 		double coeficient_x2;
@@ -51,10 +83,8 @@ public class Line_Calculations {
 
 	public static Vector getDirectionVector(Line l) {
 		Vector v = new Vector(new double[] { 0, 0 });
-
 		v.getCoordinates()[0] = l.getNormal_vector().getCoordinates()[1];
 		v.getCoordinates()[1] = -l.getNormal_vector().getCoordinates()[0];
-
 		return v;
 	}
 }
