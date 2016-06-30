@@ -33,9 +33,7 @@ public class Visual_Line_Checks {
 		// TODO Auto-generated method stub
 		try {
 			Visual_Line_Checks vc = new Visual_Line_Checks();
-
-			Vector nv1 = new Vector(new double[] { 4.046, 2.836 });
-			Vector nv2 = new Vector(new double[] { 10.115, 7.09 });
+ 
 
 			Line l1 = new Line(new Vector(new double[] { 4.046, 2.836 }), 1.21);
 			Line l2 = new Line(new Vector(new double[] { 10.115, 7.09 }), 3.025);
@@ -52,7 +50,7 @@ public class Visual_Line_Checks {
 				vc.printAreLinesCoincidental(l1, l2);
 			} else {
 				if (areLinesParallel(l1, l2)) {
-					vc.printAreLinesParallel(l1, l2);
+					vc.printAreLinesParallel(l1, l2); 
 				} else {
 					vc.printPointOfIntersection(l1, l2);
 				}
