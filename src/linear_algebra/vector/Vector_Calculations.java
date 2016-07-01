@@ -1,10 +1,9 @@
-package linear_algebra;
+package linear_algebra.vector;
 
+import static linear_algebra.Settings.*;
 import linear_algebra.exceptions.*;
 
 public class Vector_Calculations {
-
-	public static final double TOLERANCE = 1e-4;
 
 	public static Vector addVectors(Vector v1, Vector v2)
 			throws DiffernetDimentionsVectorException, NullPointerException {
@@ -249,6 +248,22 @@ public class Vector_Calculations {
 			throw new NullPointerException();
 		}
 		return orthogonalComponent;
+	}
+
+	public static Vector findVectorGivenTwoPoints(Vector point1, Vector point2)
+			throws DiffernetDimentionsVectorException {
+		Vector v = new Vector(point1.getCoordinates().length);
+
+		if (point1.getCoordinates().length != point2.getCoordinates().length) {
+			throw new DiffernetDimentionsVectorException();
+
+		}
+
+		for (int i = 0; i < v.getCoordinates().length; i++) {
+			v.getCoordinates()[i] = point2.getCoordinates()[i] - point1.getCoordinates()[i];
+		}
+
+		return v;
 	}
 
 }

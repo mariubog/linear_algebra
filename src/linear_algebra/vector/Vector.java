@@ -1,7 +1,7 @@
 /**
  * 
  */
-package linear_algebra;
+package linear_algebra.vector;
 
 import java.util.Arrays;
 

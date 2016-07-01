@@ -1,5 +1,6 @@
-package linear_algebra;
+package linear_algebra.line;
 
+import linear_algebra.vector.Vector;
 import lombok.Getter;
 
 public class Line {
@@ -37,9 +38,9 @@ public class Line {
 	}
 
 	public Vector calculatePoint(Double x1, Double x2) {
-//		System.out.println("s constat: " + constant);
-//		System.out.println("s coeficient_x1: " + coeficient_x1);
-//		System.out.println("s coeficient_x2: " + coeficient_x2);
+		// System.out.println("s constat: " + constant);
+		// System.out.println("s coeficient_x1: " + coeficient_x1);
+		// System.out.println("s coeficient_x2: " + coeficient_x2);
 
 		if (x2 == null && coeficient_x2 != 0) {
 			x2 = (constant - (coeficient_x1 * x1)) / coeficient_x2;
@@ -62,9 +63,9 @@ public class Line {
 			if (!l.getNormal_vector().equals(this.normal_vector)) {
 				return false;
 			}
-
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	@Override

@@ -1,1 +1,1 @@
-sample linear algebra classes implementation -refreshemnt of the course
+sample linear algebra classes implementation -refresh course
