@@ -36,14 +36,14 @@ public class Visual_Line_Checks {
 		try {
 			Visual_Line_Checks vc = new Visual_Line_Checks();
 
-			Line l1 = new Line(new Vector(new double[] { 4.046, 2.836 }), 1.21);
-			Line l2 = new Line(new Vector(new double[] { 10.115, 7.09 }), 3.025);
+			Line l1 = new Line(new Vector(new Double[] { 4.046, 2.836 }), 1.21);
+			Line l2 = new Line(new Vector(new Double[] { 10.115, 7.09 }), 3.025);
 
-			Line l3 = new Line(new Vector(new double[] { 7.204, 3.182 }), 8.68);
-			Line l4 = new Line(new Vector(new double[] { 8.172, 4.114 }), 9.883);
+			Line l3 = new Line(new Vector(new Double[] { 7.204, 3.182 }), 8.68);
+			Line l4 = new Line(new Vector(new Double[] { 8.172, 4.114 }), 9.883);
 
-			Line l5 = new Line(new Vector(new double[] { 1.182, 5.562 }), 6.744);
-			Line l6 = new Line(new Vector(new double[] { 1.773, 8.343 }), 9.525);
+			Line l5 = new Line(new Vector(new Double[] { 1.182, 5.562 }), 6.744);
+			Line l6 = new Line(new Vector(new Double[] { 1.773, 8.343 }), 9.525);
 
 			vc.printLine(l1);
 			vc.printLine(l2);

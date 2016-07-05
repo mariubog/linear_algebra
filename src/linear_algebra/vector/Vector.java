@@ -12,9 +12,9 @@ import linear_algebra.exceptions.*;
  *
  */
 public class Vector {
-	private double[] coordinates;
+	private Double[] coordinates;
 
-	public Vector(double[] coordinates) throws ImpossileVectorException {
+	public Vector(Double[] coordinates) throws ImpossileVectorException {
 		if (coordinates == null || coordinates.length < 1) {
 			throw new ImpossileVectorException();
 		}
@@ -22,14 +22,14 @@ public class Vector {
 	}
 
 	public Vector(int coordinatesNumber) {
-		this.coordinates = new double[coordinatesNumber];
+		this.coordinates = new Double[coordinatesNumber];
 	}
 
-	public double[] getCoordinates() {
+	public Double[] getCoordinates() {
 		return coordinates;
 	}
 
-	public void setCoordinates(double[] coordinates) {
+	public void setCoordinates(Double[] coordinates) {
 		this.coordinates = coordinates;
 	}
 

@@ -30,10 +30,10 @@ public class Plane_Calculations {
 	}
 
 	public static Vector getDirectionVector(Line l) {
-		Vector v = new Vector(new double[] { 0, 0 });
+		Vector v = new Vector(new Double[] { 0.0, 0.0 });
 		v.getCoordinates()[0] = l.getNormal_vector().getCoordinates()[1];
 		v.getCoordinates()[1] = -l.getNormal_vector().getCoordinates()[0];
-		v.getCoordinates()[2] = 0;
+		v.getCoordinates()[2] = 0.0;
 
 		return v;
 	}

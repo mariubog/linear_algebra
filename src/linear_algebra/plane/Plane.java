@@ -21,7 +21,7 @@ public class Plane {
 		this.constant = constant;
 
 		if (normal_vector == null) {
-			this.normal_vector = new Vector(new double[] { 0, 0, 0 });
+			this.normal_vector = new Vector(new Double[] { 0.0, 0.0, 0.0 });
 		}
 		coeficient_x1 = normal_vector.getCoordinates()[0];
 		coeficient_x2 = normal_vector.getCoordinates()[1];
@@ -51,7 +51,7 @@ public class Plane {
 		} else if (x3 == null && coeficient_x3 != 0 && x1 != null && x2 != null) {
 			x3 = (constant - (coeficient_x2 * x2) - (coeficient_x1 * x1)) / coeficient_x3;
 		}
-		return new Vector(new double[] { x1, x2, x3 });
+		return new Vector(new Double[] { x1, x2, x3 });
 	}
 
 	@Override

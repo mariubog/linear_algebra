@@ -48,7 +48,7 @@ public class Line_Calculations {
 								- line_1.getNormal_vector().getCoordinates()[1]
 										* line_2.getNormal_vector().getCoordinates()[0]);
 
-		intersection = new Vector(new double[] { x, y });
+		intersection = new Vector(new Double[] { x, y });
 		return intersection;
 	}
 
@@ -69,12 +69,12 @@ public class Line_Calculations {
 
 		coeficient_x2 = 1;
 		double constant = point1.getCoordinates()[1] - (coeficient_x1 * point1.getCoordinates()[0]);
-		Vector normal_vector = new Vector(new double[] { -coeficient_x1, coeficient_x2 });
+		Vector normal_vector = new Vector(new Double[] { -coeficient_x1, coeficient_x2 });
 		return new Line(normal_vector, constant);
 	}
 
 	public static Vector getDirectionVector(Line l) {
-		Vector v = new Vector(new double[] { 0, 0 });
+		Vector v = new Vector(new Double[] { 0.0, 0.0 });
 		v.getCoordinates()[0] = l.getNormal_vector().getCoordinates()[1];
 		v.getCoordinates()[1] = -l.getNormal_vector().getCoordinates()[0];
 		return v;

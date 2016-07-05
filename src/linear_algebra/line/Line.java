@@ -10,7 +10,7 @@ public class Line {
 	@Getter
 	private Vector basepoint;
 	@Getter
-	private double constant;
+	private Double constant;
 
 	double coeficient_x1;
 	double coeficient_x2;
@@ -20,7 +20,7 @@ public class Line {
 		this.constant = constant;
 
 		if (normal_vector == null) {
-			this.normal_vector = new Vector(new double[] { 0, 0 });
+			this.normal_vector = new Vector(new Double[] { 0.0, 0.0 });
 		}
 		coeficient_x1 = normal_vector.getCoordinates()[0];
 		coeficient_x2 = normal_vector.getCoordinates()[1];
@@ -28,7 +28,7 @@ public class Line {
 	}
 
 	private void calculateBasepoint() {
-		basepoint = new Vector(new double[] { 0, 0 });
+		basepoint = new Vector(new Double[] { 0.0, 0.0 });
 		if (coeficient_x2 != 0) {
 			basepoint.getCoordinates()[1] = constant / coeficient_x2;
 
@@ -47,7 +47,7 @@ public class Line {
 		} else if (x1 == null && coeficient_x1 != 0) {
 			x1 = (constant - (coeficient_x2 * x2)) / coeficient_x1;
 		}
-		return new Vector(new double[] { x1, x2 });
+		return new Vector(new Double[] { x1, x2 });
 	}
 
 	@Override

@@ -38,14 +38,14 @@ public class Visual_Plane_Checks {
 		try {
 			Visual_Plane_Checks vc = new Visual_Plane_Checks();
 
-			Plane l1 = new Plane(new Vector(new double[] { -0.412, 3.806, 0.728 }), -3.46);
-			Plane l2 = new Plane(new Vector(new double[] { 1.03, -9.515, -1.82 }), 8.65);
+			Plane l1 = new Plane(new Vector(new Double[] { -0.412, 3.806, 0.728 }), -3.46);
+			Plane l2 = new Plane(new Vector(new Double[] { 1.03, -9.515, -1.82 }), 8.65);
 
-			Plane l3 = new Plane(new Vector(new double[] { 2.611, 5.528, 0.283 }), 4.6);
-			Plane l4 = new Plane(new Vector(new double[] { 7.715, 8.306, 5.342 }), 3.76);
+			Plane l3 = new Plane(new Vector(new Double[] { 2.611, 5.528, 0.283 }), 4.6);
+			Plane l4 = new Plane(new Vector(new Double[] { 7.715, 8.306, 5.342 }), 3.76);
 
-			Plane l5 = new Plane(new Vector(new double[] { -7.926, 8.625, -7.217 }), -7.952);
-			Plane l6 = new Plane(new Vector(new double[] { -2.642, 2.875, -2.404 }), -2.443);
+			Plane l5 = new Plane(new Vector(new Double[] { -7.926, 8.625, -7.217 }), -7.952);
+			Plane l6 = new Plane(new Vector(new Double[] { -2.642, 2.875, -2.404 }), -2.443);
 
 			vc.printLine(l1);
 			vc.printLine(l2);

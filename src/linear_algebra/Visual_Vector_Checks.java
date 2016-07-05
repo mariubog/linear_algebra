@@ -201,12 +201,12 @@ public class Visual_Vector_Checks {
 			// vc.printVectorParallelProjection(v5, v6);
 			// vc.printVectorOrthogonalComponent(v5, v6);
 
-			Vector v1 = new Vector(new double[] { 8.462, 7.893, -8.187 });
-			Vector v2 = new Vector(new double[] { 6.984, -5.975, 4.778 });
-			Vector v3 = new Vector(new double[] { -8.987, -9.838, 5.031 });
-			Vector v4 = new Vector(new double[] { -4.268, -1.861, -8.866 });
-			Vector v5 = new Vector(new double[] { 1.5, 9.547, 3.691 });
-			Vector v6 = new Vector(new double[] { -6.007, 0.124, 5.772 });
+			Vector v1 = new Vector(new Double[] { 8.462, 7.893, -8.187 });
+			Vector v2 = new Vector(new Double[] { 6.984, -5.975, 4.778 });
+			Vector v3 = new Vector(new Double[] { -8.987, -9.838, 5.031 });
+			Vector v4 = new Vector(new Double[] { -4.268, -1.861, -8.866 });
+			Vector v5 = new Vector(new Double[] { 1.5, 9.547, 3.691 });
+			Vector v6 = new Vector(new Double[] { -6.007, 0.124, 5.772 });
 
 			vc.printVectorCrossProduct(v1, v2);
 			vc.printCrossParallelogramArea(v3, v4);
