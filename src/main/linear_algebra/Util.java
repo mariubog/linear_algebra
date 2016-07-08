@@ -1,4 +1,4 @@
-package linear_algebra;
+package main.linear_algebra;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

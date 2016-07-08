@@ -1,9 +1,9 @@
-package linear_algebra.line;
+package main.linear_algebra.line;
 
-import static linear_algebra.vector.Vector_Calculations.*;
+import static main.linear_algebra.vector.Vector_Calculations.*;
 
-import linear_algebra.vector.Vector;
-import linear_algebra.vector.Vector_Calculations;
+import main.linear_algebra.vector.Vector;
+import main.linear_algebra.vector.Vector_Calculations;
 
 public class Line_Calculations {
 

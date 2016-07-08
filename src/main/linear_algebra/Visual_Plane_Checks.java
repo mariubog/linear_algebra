@@ -1,10 +1,10 @@
-package linear_algebra;
+package main.linear_algebra;
 
-import linear_algebra.exceptions.*;
-import linear_algebra.plane.Plane;
-import linear_algebra.vector.Vector;
+import static main.linear_algebra.plane.Plane_Calculations.*;
 
-import static linear_algebra.plane.Plane_Calculations.*;
+import main.linear_algebra.exceptions.*;
+import main.linear_algebra.plane.Plane;
+import main.linear_algebra.vector.Vector;
 
 public class Visual_Plane_Checks {
 	public void printLine(Plane p) {

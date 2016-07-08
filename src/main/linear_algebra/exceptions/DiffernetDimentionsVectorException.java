@@ -1,4 +1,4 @@
-package linear_algebra.exceptions;
+package main.linear_algebra.exceptions;
 
 public class DiffernetDimentionsVectorException extends RuntimeException {
 

@@ -1,7 +1,8 @@
-package linear_algebra.vector;
+package main.linear_algebra.vector;
 
-import static linear_algebra.Settings.*;
-import linear_algebra.exceptions.*;
+import static main.linear_algebra.Settings.*;
+
+import main.linear_algebra.exceptions.*;
 
 public class Vector_Calculations {
 

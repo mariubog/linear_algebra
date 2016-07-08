@@ -1,11 +1,11 @@
 /**
  * 
  */
-package linear_algebra.vector;
+package main.linear_algebra.vector;
 
 import java.util.Arrays;
 
-import linear_algebra.exceptions.*;
+import main.linear_algebra.exceptions.*;
 
 /**
  * @author supermario

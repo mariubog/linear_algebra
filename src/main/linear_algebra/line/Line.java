@@ -1,7 +1,7 @@
-package linear_algebra.line;
+package main.linear_algebra.line;
 
-import linear_algebra.vector.Vector;
 import lombok.Getter;
+import main.linear_algebra.vector.Vector;
 
 public class Line {
 

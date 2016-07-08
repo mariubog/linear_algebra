@@ -1,7 +1,7 @@
-package linear_algebra.plane;
+package main.linear_algebra.plane;
 
-import linear_algebra.vector.Vector;
 import lombok.Getter;
+import main.linear_algebra.vector.Vector;
 
 public class Plane {
 

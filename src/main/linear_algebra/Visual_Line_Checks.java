@@ -1,11 +1,11 @@
-package linear_algebra;
+package main.linear_algebra;
 
-import linear_algebra.exceptions.*;
-import linear_algebra.line.Line;
-import linear_algebra.vector.Vector;
+import main.linear_algebra.exceptions.*;
+import main.linear_algebra.line.Line;
+import main.linear_algebra.vector.Vector;
 
-import static linear_algebra.line.Line_Calculations.*;
-import static linear_algebra.vector.Vector_Calculations.*;
+import static main.linear_algebra.line.Line_Calculations.*;
+import static main.linear_algebra.vector.Vector_Calculations.*;
 
 public class Visual_Line_Checks {
 	public void printLine(Line l) {

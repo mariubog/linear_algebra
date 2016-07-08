@@ -1,9 +1,9 @@
-package linear_algebra;
+package main.linear_algebra;
 
-import static linear_algebra.vector.Vector_Calculations.*;
+import static main.linear_algebra.vector.Vector_Calculations.*;
 
-import linear_algebra.exceptions.*;
-import linear_algebra.vector.Vector;
+import main.linear_algebra.exceptions.*;
+import main.linear_algebra.vector.Vector;
 
 public class Visual_Vector_Checks {
 	public void printVector(Vector v) {

@@ -1,7 +1,7 @@
-package linear_algebra.system_equations;
+package main.linear_algebra.system_equations;
 
-import linear_algebra.system_equations.LinearSystem.Equation;
-import linear_algebra.vector.Vector;
+import main.linear_algebra.system_equations.LinearSystem.Equation;
+import main.linear_algebra.vector.Vector;
 
 public class EquationsSystemCheck {
 
@@ -24,6 +24,10 @@ public class EquationsSystemCheck {
 		// ls.swapRows(1, 3);
 	//	 ls.addMultipliedRowToRow(1, 2, 2);
 	  	 ls.addMultipliedRowToRow(1, 4, 2);
+	  	 
+	  	 
+	  	 
+	  	 
 		System.out.println(ls.toString());
 	}
 

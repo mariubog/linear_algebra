@@ -1,10 +1,10 @@
-package linear_algebra.plane;
+package main.linear_algebra.plane;
 
-import static linear_algebra.vector.Vector_Calculations.*;
+import static main.linear_algebra.vector.Vector_Calculations.*;
 
-import linear_algebra.line.Line;
-import linear_algebra.vector.Vector;
-import linear_algebra.vector.Vector_Calculations;
+import main.linear_algebra.line.Line;
+import main.linear_algebra.vector.Vector;
+import main.linear_algebra.vector.Vector_Calculations;
 
 public class Plane_Calculations {
 
