@@ -1,9 +1,10 @@
-package main.linear_algebra.system_equations;
+package main.linear_algebra;
 
+import main.linear_algebra.system_equations.LinearSystem;
 import main.linear_algebra.system_equations.LinearSystem.Equation;
 import main.linear_algebra.vector.Vector;
 
-public class EquationsSystemCheck {
+public class Visusual_EquationsSystem_Checks {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

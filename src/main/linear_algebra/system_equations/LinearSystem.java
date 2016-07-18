@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.Setter;
 import main.linear_algebra.Util;
 import main.linear_algebra.exceptions.DiffernetDimentionsVectorException;
-import main.linear_algebra.line.Line;
 import main.linear_algebra.vector.Vector;
 
 /**
